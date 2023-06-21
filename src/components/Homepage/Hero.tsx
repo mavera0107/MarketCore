@@ -39,7 +39,7 @@ const Hero: React.FC = () => {
       <div className="container mx-auto px-3 lg:px-12 max-w-[100%] lg:max-w-7xl">
         {/* POPULAR GRID COMPONENT */}
         <div className="relative z-10">
-          <div className="text-white py-16 lg:py-3 flex justify-center md:justify-between items-center">
+          <div className="text-white pb-6 lg:pb-auto py-16 lg:py-3 flex justify-center md:justify-between items-center">
             <div className="pb-4 md:pb-0">
               <h1 className="mb-4 font-semibold text-4xl md:text-5xl">Diablo 4 Now Available</h1>
               <button className="bg-orange-400 text-black font-semibold rounded px-4 w-full py-3 uppercase transition-all hover:bg-orange-300">
