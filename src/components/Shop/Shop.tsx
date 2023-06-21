@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { Fragment } from 'react';
 import { BiTimeFive } from 'react-icons/bi';
 
-function classNames(...classes) {
+function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
 }
 
