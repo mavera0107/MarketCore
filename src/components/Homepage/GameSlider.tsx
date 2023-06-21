@@ -34,15 +34,17 @@ const GameSlider: React.FC = () => {
               backgroundPosition: 'top',
             }}
           >
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white"></div>
-            <div className="relative swiper-content flex flex-col h-full items-start justify-end py-12 px-2 md:py-20 md:px-20 z-[10]">
+            <div className="absolute top-64 inset-0 bg-gradient-to-b from-transparent to-white"></div>
+            <div className="relative swiper-content flex flex-col h-full items-start justify-end py-12 px-3 md:py-6 md:px-48 z-[10]">
               <div className="flex flex-row items-center">
                 <img src={gameAccount.icon} className="hidden md:block w-8 h-8 mr-2" alt="" />
                 <h1 className="text-black text-4xl font-bold">{gameAccount.title}</h1>
               </div>
-              <div className="">
-                
-                <h1 className="text-gray-800 text-4xl">Discover {gameAccount.title} coins, accounts, and more.</h1>
+              <div className="py-3">
+                <h1 className="mb-9 text-gray-800 text-4xl">View our {gameAccount.title} threads from our reputable sellers.</h1>
+                <button className="transition-all iuppercase px-4 rounded text-white font-semibold hover:bg-orange-300 py-3 bg-orange-400">
+                  Browse {gameAccount.title}
+                </button>
               </div>
             </div>
           </SwiperSlide>
