@@ -7,6 +7,7 @@ import { AiFillFire } from "react-icons/ai";
 import { BsPeopleFill} from "react-icons/bs";
 import { FaBell,FaCoins, FaSearch, FaShieldAlt, FaShippingFast } from "react-icons/fa";
 import { GiShardSword } from "react-icons/gi";
+import { CiBellOn, CiChat1 } from "react-icons/ci";
 import { RiChat1Fill,RiChatSmileFill } from "react-icons/ri";
 
 //Data Importing
@@ -143,7 +144,7 @@ export default function Navbar() {
         <Popover.Group className="hidden lg:flex lg:gap-x-12 items-center justify-center">
           {/* =============== Currency Popover Nav menu desktop =============== */}
         <Popover className="relative">
-          <Popover.Button className="flex justify-center items-center gap-x-1 text-xl text-gray-500">
+          <Popover.Button className="ring-0 flex justify-center items-center gap-x-1 text-xl text-gray-500">
             <FaCoins className="mr-1 h-4 w-4"/> Currency
           </Popover.Button>
 
@@ -156,7 +157,7 @@ export default function Navbar() {
             leaveFrom="opacity-100 translate-y-0"
             leaveTo="opacity-0 translate-y-0"
           >
-          <Popover.Panel className="absolute -left-16 md:mt-[14px] top-full max-h-[350px] z-10 w-screen max-w-6xl overflow-hidden rounded-bl-lg rounded-br-lg bg-white shadow-lg">
+          <Popover.Panel className="absolute -left-16 md:mt-[10px] top-full max-h-[350px] z-10 w-screen max-w-6xl overflow-hidden rounded-bl-lg rounded-br-lg bg-white shadow-lg">
             <div className="grid grid-cols-[2fr,1fr]">
               <div className="col-span-1 bg-white border-r-[1px] border-gray-100">
                 <h3 className="border-b-[1px] border-gray-200/75 text-gray-500 bg-gray-50 text-base font-normal mb-1 flex items-center py-3 px-4"><AiFillFire className="animate-flicker mr-2 text-orange-400" /> Popular Game Currencies</h3>
@@ -254,7 +255,7 @@ export default function Navbar() {
             leaveFrom="opacity-100 translate-y-0"
             leaveTo="opacity-0 translate-y-0"
           >
-          <Popover.Panel className="absolute -left-32 md:mt-[14px] top-full max-h-[350px] z-10 w-screen max-w-6xl overflow-hidden rounded-bl-lg rounded-br-lg bg-white shadow-lg">
+          <Popover.Panel className="absolute -left-32 md:mt-[10px] top-full max-h-[350px] z-10 w-screen max-w-6xl overflow-hidden rounded-bl-lg rounded-br-lg bg-white shadow-lg">
             <div className="grid grid-cols-[2fr,1fr]">
               <div className="col-span-1 bg-white border-r-[1px] border-gray-100">
                 <h3 className="border-b-[1px] border-gray-200/75 text-gray-500 bg-gray-50 text-base font-normal mb-1 flex items-center py-3 px-4"><AiFillFire className="animate-flicker mr-2 text-orange-400" /> Popular Game Accounts</h3>
@@ -352,7 +353,7 @@ export default function Navbar() {
             leaveFrom="opacity-100 translate-y-0"
             leaveTo="opacity-0 translate-y-0"
           >
-          <Popover.Panel className="absolute -left-48 md:mt-[14px] top-full max-h-[350px] z-10 w-screen max-w-6xl overflow-hidden rounded-bl-lg rounded-br-lg bg-white shadow-lg">
+          <Popover.Panel className="absolute -left-48 md:mt-[10px] top-full max-h-[350px] z-10 w-screen max-w-6xl overflow-hidden rounded-bl-lg rounded-br-lg bg-white shadow-lg">
             <div className="grid grid-cols-[2fr,1fr]">
               <div className="col-span-1 bg-white border-r-[1px] border-gray-100">
                 <h3 className="border-b-[1px] border-gray-200/75 text-gray-500 bg-gray-50 text-base font-normal mb-1 flex items-center py-3 px-4"><AiFillFire className="animate-flicker mr-2 text-orange-400" /> Popular Game Items</h3>
@@ -444,8 +445,8 @@ export default function Navbar() {
               </a>
             ) : (
               <>
-                <button className="p-2 rounded-md text-gray-300 transition-all hover:text-gray-400 hover:bg-gray-100"><RiChat1Fill className="w-8 h-8"/></button>
-                <button className="p-2 rounded-md text-gray-300 transition-all hover:text-gray-400 hover:bg-gray-100"><RiChatSmileFill className="w-8 h-8"/></button>
+                <button className="p-1 rounded-md text-gray-300 transition-all hover:text-gray-400 hover:bg-gray-100"><CiBellOn className="w-8 h-8"/></button>
+                <button className="p-1 rounded-md text-gray-300 transition-all hover:text-gray-400 hover:bg-gray-100"><CiChat1 className="w-8 h-8"/></button>
                 <button onClick={handleProfileClick} className="text-gray-600 transition-all hover:scale-105 hover:text-gray-800">
                   <img
                     src="https://assetsdelivery.eldorado.gg/v7/_assets_/miscellaneous/v6/profile-avatar.svg"
