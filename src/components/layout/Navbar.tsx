@@ -95,7 +95,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className="bg-white">
+    <header className="bg-white z-[900] w-full fixed top-0">
       <div className="bg-gray-100 flex items-center justify-between py-1 px-4 text-gray-500">
         <h1 className="text-sm font-normal flex items-center justify-center"><FaBell className="mr-1" /> 24/7 Live Support</h1>
         <h1 className="text-sm font-normal flex items-center justify-center"><FaShippingFast className="mr-1" /> Super-Fast Delivery</h1>
@@ -156,7 +156,7 @@ export default function Navbar() {
               <div className="col-span-1 bg-white border-r-[1px] border-gray-100">
                 <h3 className="border-b-[1px] border-gray-200/75 text-gray-500 bg-gray-50 text-base font-normal mb-1 flex items-center py-3 px-4"><AiFillFire className="animate-flicker mr-2 text-orange-400" /> Popular Game Currencies</h3>
                 <div className="grid grid-cols-1 gap-2">
-                  <div className="overflow-y-auto h-[300px] grid px-2 py-2 grid-cols-2 gap-x-6 gap-y-1">
+                  <div className="overflow-y-auto h-[300px] grid px-2 py-2 grid-cols-2 gap-x-6 gap-y-0">
                     {/* Render game titles based on gameList array */}
                     {GameCurrencyTitles.map((game, index) => (
                       <div
@@ -254,7 +254,7 @@ export default function Navbar() {
               <div className="col-span-1 bg-white border-r-[1px] border-gray-100">
                 <h3 className="border-b-[1px] border-gray-200/75 text-gray-500 bg-gray-50 text-base font-normal mb-1 flex items-center py-3 px-4"><AiFillFire className="animate-flicker mr-2 text-orange-400" /> Popular Game Accounts</h3>
                 <div className="grid grid-cols-1 gap-2">
-                  <div className="overflow-y-auto h-[300px] grid px-2 py-2 grid-cols-2 gap-x-6 gap-y-1">
+                  <div className="overflow-y-auto h-[300px] grid px-2 py-2 grid-cols-2 gap-x-6 gap-y-0">
                     {/* Render game titles based on gameList array */}
                     {GameAccountsTitles.map((game, index) => (
                       <div
@@ -352,7 +352,7 @@ export default function Navbar() {
               <div className="col-span-1 bg-white border-r-[1px] border-gray-100">
                 <h3 className="border-b-[1px] border-gray-200/75 text-gray-500 bg-gray-50 text-base font-normal mb-1 flex items-center py-3 px-4"><AiFillFire className="animate-flicker mr-2 text-orange-400" /> Popular Game Items</h3>
                 <div className="grid grid-cols-1 gap-2">
-                  <div className="overflow-y-auto h-[300px] grid px-2 py-2 grid-cols-2 gap-x-6 gap-y-1">
+                  <div className="overflow-y-auto h-[300px] grid px-2 py-2 grid-cols-2 gap-x-6 gap-y-0">
                     {/* Render game titles based on gameList array */}
                     {GameItemTitles.map((game, index) => (
                       <div
