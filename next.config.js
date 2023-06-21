@@ -7,6 +7,10 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
 
+  images: {
+    domains: ['assetsdelivery.eldorado.gg'],
+  },
+
   // Uncoment to add domain whitelist
   // images: {
   //   domains: [
