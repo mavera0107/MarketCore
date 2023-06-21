@@ -35,30 +35,30 @@ const Hero: React.FC = () => {
   const GiShardSword = dynamic(() => import('react-icons/gi').then((mod) => mod.GiShardSword));
 
   return (
-    <div className="bg-cover bg-center flex flex-col items-center justify-center py-32 bg-[url(https://i.ibb.co/2SnrdjV/d4-promo-desktop.webp)]">
-      <div className="container mx-auto px-12 max-w-8xl">
+    <div className="bg-cover bg-center flex flex-col items-center justify-center py-3 lg:py-32 bg-[url(https://i.ibb.co/2SnrdjV/d4-promo-desktop.webp)]">
+      <div className="container mx-auto px-3 lg:px-12 max-w-[100%] lg:max-w-7xl">
         {/* POPULAR GRID COMPONENT */}
         <div className="relative z-10">
-          <div className="text-white py-3 flex justify-between items-center">
-            <div className="">
-              <h1 className="mb-4 font-semibold text-5xl">Diablo 4 is Now Available</h1>
-              <button className="bg-orange-400 text-black font-semibold rounded px-4 py-3 uppercase transition-all hover:bg-orange-300">
+          <div className="text-white py-16 lg:py-3 flex justify-center md:justify-between items-center">
+            <div className="pb-4 md:pb-0">
+              <h1 className="mb-4 font-semibold text-4xl md:text-5xl">Diablo 4 Now Available</h1>
+              <button className="bg-orange-400 text-black font-semibold rounded px-4 w-full py-3 uppercase transition-all hover:bg-orange-300">
                 Buy Diablo 4 Gold
               </button>              
             </div>
-            <div className="animate-pulse">
-              <img className="w-64 h-auto" src="https://static.wikia.nocookie.net/diablo/images/8/83/D3_Crest_Demon_Hunter.png" alt="" />
+            <div className="hidden md:block animate-pulse">
+              <img className="w-64 h-auto p-3 lg:p-0" src="https://static.wikia.nocookie.net/diablo/images/8/83/D3_Crest_Demon_Hunter.png" alt="" />
             </div>
           </div>
 
-          <div className="grid grid-cols-3 gap-x-3">
+          <div className="grid grid-cols-1 lg:grid-cols-3 md:gap-x-3 gap-y-3 lg:gap-y-0">
             {/* Grid for Game Currency */}
-            <div className="grid bg-white rounded-md px-6 py-6 col-span-2">
+            <div className="grid bg-white rounded-md px-6 py-6 col-span-1 lg:col-span-2">
               <h2 className="pb-3 text-lg font-semibold text-gray-600 flex items-center">
                 <FaCoins className="mr-2 h-4 w-4" />
                 Popular Currencies
               </h2>
-              <div className="card-grid grid grid-cols-2 gap-0">
+              <div className="card-grid grid grid-cols-1 md:grid-cols-2 gap-0">
                 {randomGameCurrencyIndices.map((index) => {
                   const gameCurrency = GameCurrencyLists[index];
                   return (
@@ -84,7 +84,7 @@ const Hero: React.FC = () => {
                 <BsPeopleFill className="mr-2 h-4 w-4" />
                 Popular Accounts
               </h2>
-              <div className="card-grid grid grid-cols-1 gap-0">
+              <div className="card-grid grid grid-cols-3 lg:grid-cols-1 gap-0">
                 {randomGameAccountsIndices.map((index) => {
                   const gameAccount = GameAccountLists[index];
                   return (
@@ -112,7 +112,7 @@ const Hero: React.FC = () => {
                 <GiShardSword className="mr-2 h-4 w-4" />
                 Popular Game Items
               </h2>
-              <div className="card-grid grid grid-cols-4 gap-0">
+              <div className="card-grid grid md:grid-cols-4 gap-0">
                 {randomGameItemsIndices.map((index) => {
                   const gameItem = GameItemLists[index];
                   return (

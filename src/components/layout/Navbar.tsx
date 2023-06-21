@@ -1,5 +1,5 @@
-import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react'
-import { ArrowPathIcon, Bars3Icon, ChartPieIcon, ChevronDownIcon, CursorArrowRaysIcon, FingerPrintIcon, PhoneIcon, PlayCircleIcon, SquaresPlusIcon, XMarkIcon } from '@heroicons/react/20/solid'
+import { Dialog, Popover, Transition } from '@headlessui/react'
+import { ArrowPathIcon, Bars3Icon, ChartPieIcon, CursorArrowRaysIcon, FingerPrintIcon, PhoneIcon, PlayCircleIcon, SquaresPlusIcon } from '@heroicons/react/20/solid'
 import Link from 'next/link'
 import { Fragment, useEffect, useRef, useState } from 'react'
 // Icon Importation
@@ -96,7 +96,7 @@ export default function Navbar() {
 
   return (
     <header className="bg-white z-[900] w-full fixed top-0">
-      <div className="bg-gray-100 flex items-center justify-between py-1 px-4 text-gray-500">
+      <div className="bg-gray-100 hidden md:flex items-center justify-between py-1 px-4 text-gray-500">
         <h1 className="text-sm font-normal flex items-center justify-center"><FaBell className="mr-1" /> 24/7 Live Support</h1>
         <h1 className="text-sm font-normal flex items-center justify-center"><FaShippingFast className="mr-1" /> Super-Fast Delivery</h1>
         <h1 className="text-sm font-normal flex items-center justify-center"><FaShieldAlt className="mr-1" /> Transaction Protection</h1>
@@ -455,120 +455,52 @@ export default function Navbar() {
           </div>
         </div>
       </nav>
-      <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
-        <div className="fixed inset-0 z-10" />
-        <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-          <div className="flex items-center justify-between">
-            <Link href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">Your Company</span>
-              <img
-                className="h-8 w-auto"
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                alt=""
-              />
-            </Link>
-            <button
-              type="button"
-              className="-m-2.5 rounded-md p-2.5 text-gray-700"
-              onClick={() => setMobileMenuOpen(false)}
+      {/* =============== Mobile navigation menu =============== */}
+      {mobileMenuOpen && (
+        <div className="lg:hidden">
+          <div className="fixed inset-0 flex z-40">
+            <Transition
+              show={mobileMenuOpen}
+              enter="duration-150 ease-out"
+              enterFrom="opacity-0 scale-95"
+              enterTo="opacity-100 scale-100"
+              leave="duration-100 ease-in"
+              leaveFrom="opacity-100 scale-100"
+              leaveTo="opacity-0 scale-95"
             >
-              <span className="sr-only">Close menu</span>
-              <XMarkIcon className="h-6 w-6" aria-hidden="true" />
-            </button>
+              <Dialog
+                as="div"
+                className="fixed inset-0 bg-black bg-opacity-25"
+                onClose={() => setMobileMenuOpen(false)}
+              >
+                <div className="flex h-screen">
+                  <Transition
+                    show={mobileMenuOpen}
+                    enter="duration-150 ease-out"
+                    enterFrom="opacity-0 scale-95"
+                    enterTo="opacity-100 scale-100"
+                    leave="duration-100 ease-in"
+                    leaveFrom="opacity-100 scale-100"
+                    leaveTo="opacity-0 scale-95"
+                    className="m-auto bg-white shadow-xl rounded-lg overflow-hidden"
+                  >
+                    <div className="px-2 sm:px-3 pt-2 pb-3 space-y-1">
+                      {/* Menu items */}
+                      <Link href="/">Home</Link>
+                      <Link href="/about">About</Link>
+                      <Link href="/services">Services</Link>
+                      <Link href="/contact">Contact</Link>
+
+                      {/* ... Add more menu items as needed ... */}
+                    </div>
+                  </Transition>
+                </div>
+              </Dialog>
+            </Transition>
           </div>
-          <div className="mt-6 flow-root">
-            <div className="-my-6 divide-y divide-gray-500/10">
-              <div className="space-y-2 py-6">
-                <Disclosure as="div" className="-mx-3">
-                  {({ open }) => (
-                    <>
-                      <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
-                        Product
-                        <ChevronDownIcon
-                          className={classNames(open ? 'rotate-180' : '', 'h-5 w-5 flex-none')}
-                          aria-hidden="true"
-                        />
-                      </Disclosure.Button>
-                      <Disclosure.Panel className="mt-2 space-y-2">
-                        {[...products, ...callsToAction].map((item) => (
-                          <Disclosure.Button
-                            key={item.name}
-                            as="a"
-                            href={item.href}
-                            className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                          >
-                            {item.name}
-                          </Disclosure.Button>
-                        ))}
-                      </Disclosure.Panel>
-                    </>
-                  )}
-                </Disclosure>
-                <Link
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Features
-                </Link>
-                <Link
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Marketplace
-                </Link>
-                <Link
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Company
-                </Link>
-              </div>
-              <div className="py-6">
-                <div className="space-y-6">
-                  <Link
-                    href="#"
-                    className="flex items-center justify-center gap-x-2.5 rounded-lg py-3 px-6 text-base font-semibold leading-6 text-white bg-indigo-600 hover:bg-indigo-700"
-                  >
-                    <PlayCircleIcon className="h-5 w-5 flex-none" aria-hidden="true" />
-                    Watch demo
-                  </Link>
-                  <Link
-                    href="#"
-                    className="flex items-center justify-center gap-x-2.5 rounded-lg py-3 px-6 text-base font-semibold leading-6 text-gray-900 hover:bg-gray-50"
-                  >
-                    <PhoneIcon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
-                    Contact sales
-                  </Link>
-                </div>
-              </div>
-              <div className="py-6">
-                <div className="grid grid-cols-2 gap-4">
-                  {currencyOptions.map((option) => (
-                    <Link
-                      key={option.name}
-                      href={option.href}
-                      className="flex items-center justify-center gap-x-2.5 rounded-lg py-3 px-6 text-base font-semibold leading-6 text-gray-900 hover:bg-gray-50"
-                    >
-                      <span className="text-gray-600">{option.abbreviation}</span>
-                      <span>{option.name}</span>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-              <div className="py-6">
-                <div className="space-y-6">
-                  <Link
-                    href="#"
-                    className="flex items-center justify-center gap-x-2.5 rounded-lg py-3 px-6 text-base font-semibold leading-6 text-gray-900 hover:bg-gray-50"
-                  >
-                    Log in <span aria-hidden="true">&rarr;</span>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </Dialog.Panel>
-      </Dialog>
+        </div>
+      )}
+      {/* =============== End mobile navigation menu =============== */}
     </header>
   )
 }
