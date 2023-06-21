@@ -48,6 +48,7 @@ export default function Navbar() {
   const searchInputRef = useRef<HTMLInputElement>(null);
   const searchContainerRef = useRef<HTMLDivElement>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [isDropdownVisible, setIsDropdownVisible] = useState(false);
   const isLoggedIn = true; // Replace with your login state
 
   const handleProfileClick = () => {
@@ -59,6 +60,10 @@ export default function Navbar() {
     if (searchInputRef.current) {
       searchInputRef.current.focus();
     }
+  };
+
+  const handleDropdownToggle = () => {
+    setIsDropdownVisible((prevVisible) => !prevVisible);
   };
 
   const handleSearchInput = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -145,11 +150,11 @@ export default function Navbar() {
           <Transition
             as={Fragment}
             enter="transition ease-out duration-200"
-            enterFrom="opacity-0 translate-y-1"
+            enterFrom="opacity-0 translate-y-0"
             enterTo="opacity-100 translate-y-0"
             leave="transition ease-in duration-150"
             leaveFrom="opacity-100 translate-y-0"
-            leaveTo="opacity-0 translate-y-1"
+            leaveTo="opacity-0 translate-y-0"
           >
           <Popover.Panel className="absolute -left-16 md:mt-[14px] top-full max-h-[350px] z-10 w-screen max-w-6xl overflow-hidden rounded-bl-lg rounded-br-lg bg-white shadow-lg">
             <div className="grid grid-cols-[2fr,1fr]">
@@ -189,7 +194,7 @@ export default function Navbar() {
                           className="focus:ring-0 focus:bg-gray-100 text-base font-normal block w-full py-3 border-0 bg-gray-50 text-gray-900 placeholder-gray-500"
                           ref={searchInputRef}
                         />
-                        <span className="absolute inset-y-0 right-0 pr-3 flex items-center">
+                        <span className="absolute inset-y-0 right-0 pr-4 flex items-center">
                           <FaSearch className="text-gray-400" />
                         </span>
                       </div>
@@ -243,11 +248,11 @@ export default function Navbar() {
           <Transition
             as={Fragment}
             enter="transition ease-out duration-200"
-            enterFrom="opacity-0 translate-y-1"
+            enterFrom="opacity-0 translate-y-0"
             enterTo="opacity-100 translate-y-0"
             leave="transition ease-in duration-150"
             leaveFrom="opacity-100 translate-y-0"
-            leaveTo="opacity-0 translate-y-1"
+            leaveTo="opacity-0 translate-y-0"
           >
           <Popover.Panel className="absolute -left-32 md:mt-[14px] top-full max-h-[350px] z-10 w-screen max-w-6xl overflow-hidden rounded-bl-lg rounded-br-lg bg-white shadow-lg">
             <div className="grid grid-cols-[2fr,1fr]">
@@ -287,7 +292,7 @@ export default function Navbar() {
                           className="focus:ring-0 focus:bg-gray-100 text-base font-normal block w-full py-3 border-0 bg-gray-50 text-gray-900 placeholder-gray-500"
                           ref={searchInputRef}
                         />
-                        <span className="absolute inset-y-0 right-0 pr-3 flex items-center">
+                        <span className="absolute inset-y-0 right-0 pr-4 flex items-center">
                           <FaSearch className="text-gray-400" />
                         </span>
                       </div>
@@ -341,11 +346,11 @@ export default function Navbar() {
           <Transition
             as={Fragment}
             enter="transition ease-out duration-200"
-            enterFrom="opacity-0 translate-y-1"
+            enterFrom="opacity-0 translate-y-0"
             enterTo="opacity-100 translate-y-0"
             leave="transition ease-in duration-150"
             leaveFrom="opacity-100 translate-y-0"
-            leaveTo="opacity-0 translate-y-1"
+            leaveTo="opacity-0 translate-y-0"
           >
           <Popover.Panel className="absolute -left-48 md:mt-[14px] top-full max-h-[350px] z-10 w-screen max-w-6xl overflow-hidden rounded-bl-lg rounded-br-lg bg-white shadow-lg">
             <div className="grid grid-cols-[2fr,1fr]">
@@ -385,7 +390,7 @@ export default function Navbar() {
                           className="focus:bg-gray-100 focus:ring-0 text-base font-normal block w-full py-3 border-0 bg-gray-50 text-gray-900 placeholder-gray-500"
                           ref={searchInputRef}
                         />
-                        <span className="absolute inset-y-0 right-0 pr-3 flex items-center">
+                        <span className="absolute inset-y-0 right-0 pr-4 flex items-center">
                           <FaSearch className="text-gray-400" />
                         </span>
                       </div>

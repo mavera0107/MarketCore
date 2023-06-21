@@ -8,13 +8,13 @@ import Seo from '@/components/Seo';
 export default function HomePage() {
   return (
     <>
-    <Layout>
-      <Seo
-      templateTitle='Trusted Marketplace for In-Game Items'
-      />
-      <Hero />
-      <WeAreSafe />
-    </Layout>
+      <Layout>
+        <Seo
+          templateTitle='Trusted Marketplace for In-Game Items'
+        />
+        <Hero />
+        <WeAreSafe />
+      </Layout>
     </>
   );
 }

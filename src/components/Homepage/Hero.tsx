@@ -35,8 +35,9 @@ const Hero: React.FC = () => {
   const GiShardSword = dynamic(() => import('react-icons/gi').then((mod) => mod.GiShardSword));
 
   return (
-    <div className="bg-cover bg-center flex flex-col items-center justify-center py-3 lg:py-32 bg-[url(https://i.ibb.co/2SnrdjV/d4-promo-desktop.webp)]">
-      <div className="container mx-auto px-3 lg:px-12 max-w-[100%] lg:max-w-7xl">
+    <div className="relative bg-cover flex flex-col items-center justify-center py-3 lg:py-0 bg-[url(https://images2.alphacoders.com/131/1315144.jpg)]">
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white"></div>
+      <div className="container mx-auto px-3 lg:py-32 lg:px-12 max-w-[100%] lg:max-w-7xl">
         {/* POPULAR GRID COMPONENT */}
         <div className="relative z-10">
           <div className="text-white pb-6 lg:pb-auto py-16 lg:py-3 flex justify-center md:justify-between items-center">
@@ -50,7 +51,7 @@ const Hero: React.FC = () => {
               </button>              
             </div>
             <div className="hidden md:block animate-pulse">
-              <img className="w-64 h-auto p-3 lg:p-0" src="https://static.wikia.nocookie.net/diablo/images/8/83/D3_Crest_Demon_Hunter.png" alt="" />
+              <img className="w-64 h-auto p-3 lg:p-0" src="https://www.warlegend.net/wp-content/uploads/DiabloIII_Monk.png" alt="" />
             </div>
           </div>
 
