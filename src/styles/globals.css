@@ -28,6 +28,10 @@
   /* #endregion  /**======== Primary Color =========== */
 }
 
+body {
+  user-select: none;
+}
+
 .cls-1 {
   fill: #ffb600;
   fill-rule: evenodd;
