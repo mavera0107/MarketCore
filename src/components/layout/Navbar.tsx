@@ -5,7 +5,7 @@ import { Fragment, useEffect, useRef, useState } from 'react'
 // Icon Importation
 import { AiFillFire } from "react-icons/ai";
 import { BsPeopleFill} from "react-icons/bs";
-import { FaBell,FaCoins, FaGamepad, FaSearch, FaShieldAlt, FaShippingFast } from "react-icons/fa";
+import { FaBell,FaCoins, FaSearch, FaShieldAlt, FaShippingFast } from "react-icons/fa";
 import { GiShardSword } from "react-icons/gi";
 import { RiChat1Fill,RiChatSmileFill } from "react-icons/ri";
 
@@ -154,7 +154,7 @@ export default function Navbar() {
           <Popover.Panel className="absolute -left-16 md:mt-[14px] top-full max-h-[350px] z-10 w-screen max-w-6xl overflow-hidden rounded-bl-lg rounded-br-lg bg-white shadow-lg">
             <div className="grid grid-cols-[2fr,1fr]">
               <div className="col-span-1 bg-white border-r-[1px] border-gray-100">
-                <h3 className="text-gray-500 bg-gray-50 text-sm font-semibold mb-1 flex items-center py-3 px-4"><AiFillFire className="animate-flicker mr-2 text-orange-400" /> Popular Game Currencies</h3>
+                <h3 className="border-b-[1px] border-gray-200/75 text-gray-500 bg-gray-50 text-base font-normal mb-1 flex items-center py-3 px-4"><AiFillFire className="animate-flicker mr-2 text-orange-400" /> Popular Game Currencies</h3>
                 <div className="grid grid-cols-1 gap-2">
                   <div className="overflow-y-auto h-[300px] grid px-2 py-2 grid-cols-2 gap-x-6 gap-y-1">
                     {/* Render game titles based on gameList array */}
@@ -186,7 +186,7 @@ export default function Navbar() {
                           placeholder="Search game currencies"
                           value={searchQuery}
                           onChange={handleSearchInput}
-                          className="focus:ring-0 text-sm block w-full py-3 border-0 bg-gray-50 text-gray-900 placeholder-gray-500"
+                          className="focus:ring-0 focus:bg-gray-100 text-base font-normal block w-full py-3 border-0 bg-gray-50 text-gray-900 placeholder-gray-500"
                           ref={searchInputRef}
                         />
                         <span className="absolute inset-y-0 right-0 pr-3 flex items-center">
@@ -195,11 +195,11 @@ export default function Navbar() {
                       </div>
                     ) : (
                       <div
-                        className="text-gray-500 bg-gray-50 text-sm font-semibold flex items-center py-3 px-4 cursor-pointer"
+                        className="border-b-[1px] border-gray-200/75 text-gray-500 bg-gray-50 text-base font-normal flex items-center py-3 px-4 cursor-pointer"
                         onClick={handleSearchExpand}
                         onMouseEnter={handleMouseEnter}
                       >
-                        <FaGamepad className="mr-2 text-orange-400" />
+                        {/* <FaGamepad className="mr-2 text-orange-400" /> */}
                         All Game Currencies
                         <span className="ml-auto">
                           <FaSearch className="text-gray-400" />
@@ -252,7 +252,7 @@ export default function Navbar() {
           <Popover.Panel className="absolute -left-32 md:mt-[14px] top-full max-h-[350px] z-10 w-screen max-w-6xl overflow-hidden rounded-bl-lg rounded-br-lg bg-white shadow-lg">
             <div className="grid grid-cols-[2fr,1fr]">
               <div className="col-span-1 bg-white border-r-[1px] border-gray-100">
-                <h3 className="text-gray-500 bg-gray-50 text-sm font-semibold mb-1 flex items-center py-3 px-4"><AiFillFire className="animate-flicker mr-2 text-orange-400" /> Popular Game Accounts</h3>
+                <h3 className="border-b-[1px] border-gray-200/75 text-gray-500 bg-gray-50 text-base font-normal mb-1 flex items-center py-3 px-4"><AiFillFire className="animate-flicker mr-2 text-orange-400" /> Popular Game Accounts</h3>
                 <div className="grid grid-cols-1 gap-2">
                   <div className="overflow-y-auto h-[300px] grid px-2 py-2 grid-cols-2 gap-x-6 gap-y-1">
                     {/* Render game titles based on gameList array */}
@@ -284,7 +284,7 @@ export default function Navbar() {
                           placeholder="Search game accounts"
                           value={searchQuery}
                           onChange={handleSearchInput}
-                          className="focus:ring-0 text-sm block w-full py-3 border-0 bg-gray-50 text-gray-900 placeholder-gray-500"
+                          className="focus:ring-0 focus:bg-gray-100 text-base font-normal block w-full py-3 border-0 bg-gray-50 text-gray-900 placeholder-gray-500"
                           ref={searchInputRef}
                         />
                         <span className="absolute inset-y-0 right-0 pr-3 flex items-center">
@@ -293,11 +293,11 @@ export default function Navbar() {
                       </div>
                     ) : (
                       <div
-                        className="text-gray-500 bg-gray-50 text-sm font-semibold flex items-center py-3 px-4 cursor-pointer"
+                        className="border-b-[1px] border-gray-200/75 text-gray-500 bg-gray-50 text-base font-normal flex items-center py-3 px-4 cursor-pointer"
                         onClick={handleSearchExpand}
                         onMouseEnter={handleMouseEnter}
                       >
-                        <FaGamepad className="mr-2 text-orange-400" />
+                        {/* <FaGamepad className="mr-2 text-orange-400" /> */}
                         All Game Accounts
                         <span className="ml-auto">
                           <FaSearch className="text-gray-400" />
@@ -350,7 +350,7 @@ export default function Navbar() {
           <Popover.Panel className="absolute -left-48 md:mt-[14px] top-full max-h-[350px] z-10 w-screen max-w-6xl overflow-hidden rounded-bl-lg rounded-br-lg bg-white shadow-lg">
             <div className="grid grid-cols-[2fr,1fr]">
               <div className="col-span-1 bg-white border-r-[1px] border-gray-100">
-                <h3 className="text-gray-500 bg-gray-50 text-sm font-semibold mb-1 flex items-center py-3 px-4"><AiFillFire className="animate-flicker mr-2 text-orange-400" /> Popular Game Items</h3>
+                <h3 className="border-b-[1px] border-gray-200/75 text-gray-500 bg-gray-50 text-base font-normal mb-1 flex items-center py-3 px-4"><AiFillFire className="animate-flicker mr-2 text-orange-400" /> Popular Game Items</h3>
                 <div className="grid grid-cols-1 gap-2">
                   <div className="overflow-y-auto h-[300px] grid px-2 py-2 grid-cols-2 gap-x-6 gap-y-1">
                     {/* Render game titles based on gameList array */}
@@ -382,7 +382,7 @@ export default function Navbar() {
                           placeholder="Search game items"
                           value={searchQuery}
                           onChange={handleSearchInput}
-                          className="focus:ring-0 text-sm block w-full py-3 border-0 bg-gray-50 text-gray-900 placeholder-gray-500"
+                          className="focus:bg-gray-100 focus:ring-0 text-base font-normal block w-full py-3 border-0 bg-gray-50 text-gray-900 placeholder-gray-500"
                           ref={searchInputRef}
                         />
                         <span className="absolute inset-y-0 right-0 pr-3 flex items-center">
@@ -391,11 +391,11 @@ export default function Navbar() {
                       </div>
                     ) : (
                       <div
-                        className="text-gray-500 bg-gray-50 text-sm font-semibold flex items-center py-3 px-4 cursor-pointer"
+                        className="border-b-[1px] border-gray-200/75 text-gray-500 bg-gray-50 text-base font-normal flex items-center py-3 px-4 cursor-pointer"
                         onClick={handleSearchExpand}
                         onMouseEnter={handleMouseEnter}
                       >
-                        <FaGamepad className="mr-2 text-orange-400" />
+                        {/* <FaGamepad className="mr-2 text-orange-400" /> */}
                         All Game Items
                         <span className="ml-auto">
                           <FaSearch className="text-gray-400" />
