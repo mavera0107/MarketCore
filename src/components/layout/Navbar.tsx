@@ -1,5 +1,5 @@
-import { Dialog, Popover, Transition } from '@headlessui/react'
-import { ArrowPathIcon, Bars3Icon, ChartPieIcon, CursorArrowRaysIcon, FingerPrintIcon, PhoneIcon, PlayCircleIcon, SquaresPlusIcon } from '@heroicons/react/20/solid'
+import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react'
+import { ArrowPathIcon, Bars3Icon, ChartPieIcon, ChevronDownIcon, CursorArrowRaysIcon, FingerPrintIcon, PhoneIcon, PlayCircleIcon, SquaresPlusIcon, XMarkIcon } from '@heroicons/react/20/solid'
 import Link from 'next/link'
 import { Fragment, useEffect, useRef, useState } from 'react'
 // Icon Importation
@@ -95,7 +95,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className="bg-white z-[900] w-full fixed top-0">
+    <header className="bg-white z-[900] w-full fixed top-0 shadow-md">
       <div className="bg-gray-100 hidden md:flex items-center justify-between py-1 px-4 text-gray-500">
         <h1 className="text-sm font-normal flex items-center justify-center"><FaBell className="mr-1" /> 24/7 Live Support</h1>
         <h1 className="text-sm font-normal flex items-center justify-center"><FaShippingFast className="mr-1" /> Super-Fast Delivery</h1>
@@ -456,50 +456,126 @@ export default function Navbar() {
         </div>
       </nav>
       {/* =============== Mobile navigation menu =============== */}
-      {mobileMenuOpen && (
-        <div className="lg:hidden">
-          <div className="fixed inset-0 flex z-40">
-            <Transition
-              show={mobileMenuOpen}
-              enter="duration-150 ease-out"
-              enterFrom="opacity-0 scale-95"
-              enterTo="opacity-100 scale-100"
-              leave="duration-100 ease-in"
-              leaveFrom="opacity-100 scale-100"
-              leaveTo="opacity-0 scale-95"
-            >
-              <Dialog
-                as="div"
-                className="fixed inset-0 bg-black bg-opacity-25"
-                onClose={() => setMobileMenuOpen(false)}
-              >
-                <div className="flex h-screen">
-                  <Transition
-                    show={mobileMenuOpen}
-                    enter="duration-150 ease-out"
-                    enterFrom="opacity-0 scale-95"
-                    enterTo="opacity-100 scale-100"
-                    leave="duration-100 ease-in"
-                    leaveFrom="opacity-100 scale-100"
-                    leaveTo="opacity-0 scale-95"
-                    className="m-auto bg-white shadow-xl rounded-lg overflow-hidden"
-                  >
-                    <div className="px-2 sm:px-3 pt-2 pb-3 space-y-1">
-                      {/* Menu items */}
-                      <Link href="/">Home</Link>
-                      <Link href="/about">About</Link>
-                      <Link href="/services">Services</Link>
-                      <Link href="/contact">Contact</Link>
+      <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
+        <div className="fixed inset-0 z-10" />
+        <Dialog.Panel className="fixed inset-y-0 right-0 z-[999] w-full overflow-y-auto bg-white px-6 py-1 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+          <div className="flex items-center justify-between">
+            <Link href="/" className="-m-1.5 p-1.5">
+              <span className="sr-only">MarketCore</span>
+                <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 165 40" width="164" height="40">
+                  <defs>
+                  </defs>
+                  <path fill="orange" d="m30.14,0H9.86C4.42,0,0,4.42,0,9.86v20.28c0,5.45,4.42,9.86,9.86,9.86h20.28c5.45,0,9.86-4.42,9.86-9.86V9.86c0-5.45-4.42-9.86-9.86-9.86Zm-8.75,22.73c.02.09.1.15.19.15h4.87c.09,0,.17-.06.19-.15l2.58-9.78c.03-.13-.06-.25-.19-.25H11.54c-.13,0-.23.12-.19.25l4.15,16.19c.02.09.1.15.19.15h15.6c.11,0,.2.09.2.2v3.3c0,.11-.09.2-.2.2H12.81c-.09,0-.17-.06-.19-.15l-4.42-17.49c-.02-.09-.1-.15-.19-.15h-1.75c-.13,0-.22-.12-.19-.25l1.38-5.81c.02-.09.1-.15.19-.15h26.11c.13,0,.23.12.19.25l-4.21,16.36c-.02.09-.1.15-.19.15h-11c-.09,0-.17-.06-.19-.15l-2.26-8.97c-.03-.13.06-.25.19-.25h8.06c.13,0,.23.12.19.25l-.82,3.31c-.02.09-.1.15-.19.15h-2.56c-.13,0-.23.12-.19.25l.63,2.37Z" className="cls-1">
+                  </path>
+                  <g>
+                    <polygon points="68.19 30.67 72.17 30.67 72.17 9 68.19 11.05 68.19 30.67" className="cls-2"></polygon>
+                    <path d="m84.46,15.95c-.72-.68-1.87-1.22-3.2-1.22-3.74,0-5.87,3.27-5.87,7.94,0,5.83,2.65,8.33,5.87,8.33,1.44,0,2.44-.62,3.2-1.3v.98h3.97V9l-3.97,2.05v4.91Zm0,3.99v5.88c-.57.78-1.21,1.31-2.44,1.31-1.55,0-2.59-1.34-2.59-4.55,0-2.62.84-3.99,2.36-3.99,1.16,0,2.07.48,2.68,1.34h0Z" className="cls-2"></path>
+                    <polygon points="54.03 21.57 59.81 21.57 59.81 17.53 54.03 17.53 54.03 13.93 63.99 13.93 63.99 9.86 50 9.86 50 30.67 64.42 30.67 64.42 26.6 54.03 26.6 54.03 21.57" className="cls-2"></polygon>
+                    <path d="m98.39,14.73c-3.94,0-6.82,3.36-6.82,8.15s2.88,8.12,6.82,8.12,6.85-3.33,6.85-8.12-2.91-8.15-6.85-8.15Zm0,12.31c-1.9,0-2.79-1.75-2.79-4.16s.89-4.2,2.79-4.2,2.82,1.81,2.82,4.2c0,2.17-.92,4.16-2.82,4.16Z" className="cls-2"></path>
+                    <polygon points="117.16 19.85 117.15 19.85 117.15 19.85 117.16 19.85" className="cls-2"></polygon>
+                    <path d="m144.22,15.95c-.72-.68-1.87-1.22-3.2-1.22-3.74,0-5.87,3.27-5.87,7.94,0,5.83,2.65,8.33,5.87,8.33,1.44,0,2.45-.62,3.2-1.3v.98h3.97V9l-3.97,2.05v4.91Zm0,3.99v5.88c-.57.78-1.21,1.31-2.44,1.31-1.55,0-2.59-1.34-2.59-4.55,0-2.62.83-3.99,2.36-3.99,1.15,0,2.07.48,2.68,1.34h0Z" className="cls-2"></path>
+                    <path d="m158.15,14.73c-3.94,0-6.82,3.36-6.82,8.15s2.88,8.12,6.82,8.12,6.85-3.33,6.85-8.12-2.91-8.15-6.85-8.15Zm0,12.31c-1.9,0-2.79-1.75-2.79-4.16s.89-4.2,2.79-4.2,2.82,1.81,2.82,4.2c0,2.17-.92,4.16-2.82,4.16Z" className="cls-2"></path>
+                    <path d="m126.09,14.75c-2.44,0-3.92.53-5.67,1.58l1.52,2.85c1.38-.78,2.33-1.04,4.14-1.04,1.44,0,2.16.89,2.16,1.99v.77c-.63-.33-1.52-.63-2.91-.63-3.43,0-6.13,1.72-6.13,5.17,0,3.78,2.82,5.56,5.64,5.56,1.41,0,2.68-.6,3.4-1.37v1.04h0s3.97.01,3.97.01v-10.47c0-3.51-2.48-5.47-6.13-5.47Zm2.15,11.35c-.43.74-1.47,1.43-2.77,1.43-1.7,0-2.3-.98-2.3-2.08,0-1.25.81-1.96,2.3-1.96,1.41,0,2.08.21,2.77.65v1.96Z" className="cls-2"></path>
+                    <path d="m115.39,14.73c-1.41,0-2.41.63-3.11,1.37v-1.04h-3.97v15.61h3.97v-8.44c0-2.71,1.01-3.39,2.56-3.39.89,0,1.67.42,2.3,1.01l1.03-4.01c-.52-.57-1.5-1.1-2.79-1.1Z" className="cls-2"></path>
+                  </g>
 
-                      {/* ... Add more menu items as needed ... */}
-                    </div>
-                  </Transition>
-                </div>
-              </Dialog>
-            </Transition>
+                </svg>
+            </Link>
+            <button
+              type="button"
+              className="-m-2.5 rounded-md p-2.5 text-gray-700"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              <span className="sr-only">Close menu</span>
+              <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+            </button>
           </div>
-        </div>
-      )}
+          <div className="mt-6 flow-root">
+            <div className="-my-6 divide-y divide-gray-500/10">
+              <div className="space-y-2 py-6">
+                {/* =============== Mobile Currency menu =============== */}
+                <Disclosure as="div" className="-mx-3">
+                  {({ open }) => (
+                    <>
+                      <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+                        Currency
+                        <ChevronDownIcon
+                          className={classNames(open ? 'rotate-180' : '', 'h-5 w-5 flex-none')}
+                          aria-hidden="true"
+                        />
+                      </Disclosure.Button>
+                      <Disclosure.Panel className="bg-gray-50 space-y-2 max-h-[300px] overflow-y-auto">
+                        {[...GameCurrencyLists].map((game, index) => (
+                          <Disclosure.Button
+                            key={index}
+                            as="a"
+                            href=""
+                            className="block rounded-lg py-2 pl-6 pr-3 text-sm font-normal leading-7 text-gray-900 hover:bg-gray-50"
+                          >
+                            {game.title}
+                          </Disclosure.Button>
+                        ))}
+                      </Disclosure.Panel>
+                    </>
+                  )}
+                </Disclosure>
+                {/* =============== Mobile Accounts menu =============== */}
+                <Disclosure as="div" className="-mx-3">
+                  {({ open }) => (
+                    <>
+                      <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+                        Accounts
+                        <ChevronDownIcon
+                          className={classNames(open ? 'rotate-180' : '', 'h-5 w-5 flex-none')}
+                          aria-hidden="true"
+                        />
+                      </Disclosure.Button>
+                      <Disclosure.Panel className="bg-gray-50 space-y-2 max-h-[300px] overflow-y-auto">
+                        {[...GameAccountsLists].map((game, index) => (
+                          <Disclosure.Button
+                            key={index}
+                            as="a"
+                            href=""
+                            className="block rounded-lg py-2 pl-6 pr-3 text-sm font-normal leading-7 text-gray-900 hover:bg-gray-50"
+                          >
+                            {game.title}
+                          </Disclosure.Button>
+                        ))}
+                      </Disclosure.Panel>
+                    </>
+                  )}
+                </Disclosure>
+                {/* =============== Mobile Items menu =============== */}
+                <Disclosure as="div" className="-mx-3">
+                  {({ open }) => (
+                    <>
+                      <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+                        Items
+                        <ChevronDownIcon
+                          className={classNames(open ? 'rotate-180' : '', 'h-5 w-5 flex-none')}
+                          aria-hidden="true"
+                        />
+                      </Disclosure.Button>
+                      <Disclosure.Panel className="bg-gray-50 space-y-2 max-h-[300px] overflow-y-auto">
+                        {[...GameItemLists].map((game, index) => (
+                          <Disclosure.Button
+                            key={index}
+                            as="a"
+                            href=""
+                            className="block rounded-lg py-2 pl-6 pr-3 text-sm font-normal leading-7 text-gray-900 hover:bg-gray-50"
+                          >
+                            {game.title}
+                          </Disclosure.Button>
+                        ))}
+                      </Disclosure.Panel>
+                    </>
+                  )}
+                </Disclosure>
+              </div>
+            </div>
+          </div>
+        </Dialog.Panel>
+      </Dialog>
       {/* =============== End mobile navigation menu =============== */}
     </header>
   )

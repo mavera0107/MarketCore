@@ -41,7 +41,10 @@ const Hero: React.FC = () => {
         <div className="relative z-10">
           <div className="text-white pb-6 lg:pb-auto py-16 lg:py-3 flex justify-center md:justify-between items-center">
             <div className="pb-4 md:pb-0">
-              <h1 className="mb-4 font-semibold text-4xl md:text-5xl">Diablo 4 Now Available</h1>
+              <h1 className="font-semibold text-4xl md:text-5xl">Diablo 4 Now Available</h1>
+              <p className="mt-3 md:mt-0 mb-4 text-lg text-gray-200 block text-center">
+                We now offer Diablo IV gold, accounts, and items in our store!
+              </p>
               <button className="bg-orange-400 text-black font-semibold rounded px-4 w-full py-3 uppercase transition-all hover:bg-orange-300">
                 Buy Diablo 4 Gold
               </button>              
@@ -53,8 +56,8 @@ const Hero: React.FC = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 md:gap-x-3 gap-y-3 lg:gap-y-0">
             {/* Grid for Game Currency */}
-            <div className="grid bg-white rounded-md px-6 py-6 col-span-1 lg:col-span-2">
-              <h2 className="pb-3 text-lg font-semibold text-gray-600 flex items-center">
+            <div className="grid bg-white rounded-md px-2 md:px-6 py-6 col-span-1 lg:col-span-2">
+              <h2 className="pb-3 text-lg font-semibold text-gray-600 flex items-center mx-auto md:mx-0">
                 <FaCoins className="mr-2 h-4 w-4" />
                 Popular Currencies
               </h2>
@@ -79,12 +82,12 @@ const Hero: React.FC = () => {
             </div>
 
             {/* Grid for Game Accounts */}
-            <div className="grid bg-white rounded-md px-6 py-6">
-              <h2 className="pb-3 text-lg font-semibold text-gray-600 flex items-center">
+            <div className="grid bg-white rounded-md px-2 md:px-6 py-6">
+              <h2 className="pb-3 text-lg font-semibold text-gray-600 flex items-center mx-auto md:mx-0">
                 <BsPeopleFill className="mr-2 h-4 w-4" />
                 Popular Accounts
               </h2>
-              <div className="card-grid grid grid-cols-3 lg:grid-cols-1 gap-0">
+              <div className="card-grid grid grid-cols-1 md:grid-cols-3 lg:grid-cols-1 gap-0">
                 {randomGameAccountsIndices.map((index) => {
                   const gameAccount = GameAccountLists[index];
                   return (
@@ -107,8 +110,8 @@ const Hero: React.FC = () => {
 
           <div className="grid pt-3">
             {/* Grid for Game Items */}
-            <div className="grid bg-white rounded-md px-6 py-6">
-              <h2 className="pb-3 text-lg font-semibold text-gray-600 flex items-center">
+            <div className="grid bg-white rounded-md px-2 md:px-6 py-6">
+              <h2 className="pb-3 text-lg font-semibold text-gray-600 flex items-center mx-auto md:mx-0">
                 <GiShardSword className="mr-2 h-4 w-4" />
                 Popular Game Items
               </h2>
