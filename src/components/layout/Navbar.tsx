@@ -180,7 +180,7 @@ export default function Navbar() {
                 {/* All Games section */}
                   <div className="col-span-3 h-full">
                     {searchExpanded ? (
-                      <div className="relative" onMouseLeave={handleMouseLeave} ref={searchContainerRef}>
+                      <div className="border-b-[1px] border-gray-200/75 relative" onMouseLeave={handleMouseLeave} ref={searchContainerRef}>
                         <input
                           type="text"
                           placeholder="Search game currencies"
@@ -278,7 +278,7 @@ export default function Navbar() {
                 {/* All Games section */}
                   <div className="col-span-3 h-full">
                     {searchExpanded ? (
-                      <div className="relative" onMouseLeave={handleMouseLeave} ref={searchContainerRef}>
+                      <div className="border-b-[1px] border-gray-200/75 relative" onMouseLeave={handleMouseLeave} ref={searchContainerRef}>
                         <input
                           type="text"
                           placeholder="Search game accounts"
@@ -376,7 +376,7 @@ export default function Navbar() {
                 {/* All Games section */}
                   <div className="col-span-3 h-full">
                     {searchExpanded ? (
-                      <div className="relative" onMouseLeave={handleMouseLeave} ref={searchContainerRef}>
+                      <div className="border-b-[1px] border-gray-200/75 relative" onMouseLeave={handleMouseLeave} ref={searchContainerRef}>
                         <input
                           type="text"
                           placeholder="Search game items"
