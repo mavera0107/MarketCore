@@ -37,7 +37,7 @@ const Hero: React.FC = () => {
   return (
     <div className="relative bg-cover flex flex-col items-center justify-center py-3 lg:py-0 bg-[url(https://images2.alphacoders.com/131/1315144.jpg)]">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white"></div>
-      <div className="container mx-auto px-3 lg:py-32 lg:px-12 max-w-[100%] lg:max-w-7xl">
+      <div className="container mx-auto px-3 lg:py-32 lg:pb-12 lg:px-12 max-w-[100%] lg:max-w-7xl">
         {/* POPULAR GRID COMPONENT */}
         <div className="relative z-10">
           <div className="text-white pb-6 lg:pb-auto py-16 lg:py-3 flex justify-center md:justify-between items-center">
