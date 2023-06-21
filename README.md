@@ -6,9 +6,9 @@
 
 <img src="homepage-v2.png" alt="Marketcore Homepage" />
 
-## Features
+## Technologies
 
-This repository is 🔋 battery packed with:
+This project is 🔋 packed with:
 
 - ⚡️ Next.js 13
 - ⚛️ React 18
