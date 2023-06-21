@@ -4,6 +4,8 @@
   <p>Made by <a href="https://cadogy.com">Cadogy</a></p>
 </div>
 
+<img src="https://i.ibb.co/Qnh3sSj/localhost-3000-5.png" alt="Marketcore Homepage" />
+
 ## Features
 
 This repository is 🔋 battery packed with:
