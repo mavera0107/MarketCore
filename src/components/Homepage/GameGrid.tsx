@@ -31,7 +31,7 @@ const GameGrid: React.FC = () => {
     <div className="mx-auto flex justify-center mb-12 text-2xl md:text-4xl font-semibold items-center">
       <h1>Trending Game Currencies</h1>
     </div>
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 max-w-7xl mx-auto px-3">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-2 mx-auto lg:max-w-[85%] px-3 2xl:px-12">
       {/* Grid for Game Currency */}
       {randomGameCurrencyIndices.map((index) => {
         const gameCurrency = GameCurrencyLists[index];
@@ -46,7 +46,7 @@ const GameGrid: React.FC = () => {
               alt={gameCurrency.title}
             />
             <div className="flex flex-col justify-center items-center py-3">
-              <span className="card-title text-lg font-semibold group-hover:text-orange-400">{gameCurrency.title}</span>
+              <span className="card-title text-lg group-hover:text-orange-400">{gameCurrency.title}</span>
             </div>
           </div>
         );
