@@ -136,7 +136,7 @@ export default function Navbar() {
           </button>
         </div>
         <Popover.Group className="hidden lg:flex lg:gap-x-12 items-center justify-center">
-          {/* =============== Currency Popover Nav menu =============== */}
+          {/* =============== Currency Popover Nav menu desktop =============== */}
         <Popover className="relative">
           <Popover.Button className="flex justify-center items-center gap-x-1 text-xl text-gray-500">
             <FaCoins className="mr-1 h-4 w-4"/> Currency
@@ -232,9 +232,9 @@ export default function Navbar() {
             </Popover.Panel>
           </Transition>
         </Popover>
-        {/* =============== Currency Popover Nav menu =============== */}
+        {/* =============== Currency Popover Nav menu desktop =============== */}
 
-          {/* =============== Accounts Popover Nav menu =============== */}
+          {/* =============== Accounts Popover Nav menu desktop =============== */}
           <Popover className="relative">
           <Popover.Button className="flex justify-center items-center gap-x-1 text-xl text-gray-500">
             <BsPeopleFill className="mr-1 h-4 w-4" /> Accounts
@@ -330,9 +330,9 @@ export default function Navbar() {
             </Popover.Panel>
           </Transition>
         </Popover>
-        {/* =============== Accounts Popover Nav menu =============== */}
+        {/* =============== Accounts Popover Nav menu desktop =============== */}
 
-          {/* =============== Items Popover Nav menu =============== */}
+          {/* =============== Items Popover Nav menu desktop =============== */}
           <Popover className="relative">
           <Popover.Button className="flex justify-center items-center gap-x-1 text-xl text-gray-500">
             <GiShardSword className="mr-1 h-4 w-4"/> Items
@@ -428,9 +428,9 @@ export default function Navbar() {
             </Popover.Panel>
           </Transition>
         </Popover>
-        {/* =============== Items Popover Nav menu =============== */}
+        {/* =============== Items Popover Nav menu desktop =============== */}
         </Popover.Group>
-
+        {/* =============== Right side user menu desktop =============== */}
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <div className="flex items-center space-x-3">
             {!isLoggedIn ? (
