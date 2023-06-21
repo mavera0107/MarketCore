@@ -225,7 +225,7 @@ export default function Navbar() {
                           >
                             <div className="flex items-center">
                               {game.icon && (
-                                <img src={game.icon} alt="Game Icon" className="group-hover:scale-105 transition-all mr-2 w-6 h-6" />
+                                <img src={game.icon} alt="Game Icon" className="rounded group-hover:scale-105 transition-all mr-2 w-6 h-6" />
                               )}
                               <span className="text-gray-500 hover:text-gray-800">{game.title}</span>
                             </div>
@@ -323,7 +323,7 @@ export default function Navbar() {
                           >
                             <div className="flex items-center">
                               {game.icon && (
-                                <img src={game.icon} alt="Game Icon" className="group-hover:scale-105 transition-all mr-2 w-6 h-6" />
+                                <img src={game.icon} alt="Game Icon" className="rounded group-hover:scale-105 transition-all mr-2 w-6 h-6" />
                               )}
                               <span className="text-gray-500 hover:text-gray-800">{game.title}</span>
                             </div>
@@ -421,7 +421,7 @@ export default function Navbar() {
                           >
                             <div className="flex items-center">
                               {game.icon && (
-                                <img src={game.icon} alt="Game Icon" className="group-hover:scale-105 transition-all mr-2 w-6 h-6" />
+                                <img src={game.icon} alt="Game Icon" className="rounded group-hover:scale-105 transition-all mr-2 w-6 h-6" />
                               )}
                               <span className="text-gray-500 hover:text-gray-800">{game.title}</span>
                             </div>
