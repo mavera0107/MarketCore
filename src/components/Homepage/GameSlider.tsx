@@ -1,12 +1,12 @@
 import React from 'react';
-import SwiperCore, { Pagination, Scrollbar, A11y } from 'swiper';
+import SwiperCore, { Navigation, Autoplay, Pagination, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import gameAccountsList from '../../models/gameAccountsLists';
 
-SwiperCore.use([Pagination, Scrollbar, A11y]);
+SwiperCore.use([Pagination, Scrollbar, A11y, Autoplay, Navigation]);
 
 const GameSlider: React.FC = () => {
   return (
@@ -18,6 +18,7 @@ const GameSlider: React.FC = () => {
         loop={true}
         simulateTouch={true}
         grabCursor={true}
+        autoplay={{ delay: 5000 }} // Set autoplay delay to 5000ms (5 seconds)
         className="swiper-container"
       >
         {gameAccountsList.map((gameAccount, index) => (
