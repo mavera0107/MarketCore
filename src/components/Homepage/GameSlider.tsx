@@ -35,7 +35,7 @@ const GameSlider: React.FC = () => {
               backgroundPosition: 'top',
             }}
           >
-            <div className="absolute top-64 inset-0 bg-gradient-to-b from-transparent to-white"></div>
+            <div className="absolute top-48 inset-0 bg-gradient-to-b from-transparent to-white"></div>
             <div className="relative swiper-content flex flex-col h-full items-start justify-end py-12 px-3 md:py-6 md:px-48 z-[10]">
               <div className="flex flex-row items-center">
                 <img src={gameAccount.icon} className="hidden md:block w-8 h-8 mr-2" alt="" />
