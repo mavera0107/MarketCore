@@ -4,11 +4,11 @@
   <p>Made by <a href="https://cadogy.com">Cadogy</a></p>
 </div>
 
-<img src="https://i.ibb.co/02TXvWV/localhost-3000-6.png" alt="Marketcore Homepage" />
+<img src="homepage-v2.png" alt="Marketcore Homepage" />
 
-## Features
+## Technologies
 
-This repository is 🔋 battery packed with:
+This project is 🔋 packed with:
 
 - ⚡️ Next.js 13
 - ⚛️ React 18
