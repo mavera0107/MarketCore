@@ -1,10 +1,11 @@
 <div align="center">
   <h2>Marketcore - Dynamic BST Marketplace Application</h2>
   <p>A fully-featured buy sell trade marketplace application. Made with the MERN Stack.</p>
-  <p>Made by <a href="https://cadogy.com">Cadogy</a></p>
+  <p>WIP by <a href="https://cadogy.com">Cadogy</a></p>
 </div>
 
-<img src="homepage-v2.png" alt="Marketcore Homepage" />
+<img src="homepage-v2.png" alt="MarketCore Homepage" />
+<img src="productpage-v2.png" alt="MarketCore Products Page" />
 
 ## Technologies
 
