@@ -6,9 +6,7 @@
 
 <img src="homepage-v2.png" alt="MarketCore Homepage" />
 <img src="productpage-v2.png" alt="MarketCore Products Page" />
-<video autoplay loop muted controls="false" style="width: 100%; height: auto;">
-    <source src="mc-menu-demo.mp4" type="video/mp4">
-</video>
+<img src="mc-menu-demo.gif" alt="MarketCore Menu Example" />
 
 ## Technologies
 
