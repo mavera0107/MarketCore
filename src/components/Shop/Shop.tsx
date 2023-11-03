@@ -3,7 +3,8 @@ import { ChevronDownIcon } from '@heroicons/react/20/solid';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid';
 import Image from 'next/image';
 import { Fragment } from 'react';
-import { BiTimeFive } from 'react-icons/bi';
+import { BiSearch, BiTimeFive } from 'react-icons/bi';
+import { useParams } from 'react-router-dom';
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
@@ -18,7 +19,8 @@ const games = [
 const items = [
   {
     title: 'US East - Azena',
-    category: 'Gold',
+    category:
+      '🔥【XBOX ONE】✔️ 16 Trillion Pure Cash ✔️ 7900+ Level ✔️ Max S...',
     photo: {
       src: 'https://assetsdelivery.eldorado.gg/v7/_assets_/items/v6/50/Lost-Ark-currency.jpg',
       width: 58,
@@ -30,7 +32,8 @@ const items = [
   },
   {
     title: 'US East - Azena',
-    category: 'Gold',
+    category:
+      '🔥【XBOX ONE】✔️ 16 Trillion Pure Cash ✔️ 7900+ Level ✔️ Max S...',
     photo: {
       src: 'https://assetsdelivery.eldorado.gg/v7/_assets_/items/v6/50/Lost-Ark-currency.jpg',
       width: 58,
@@ -42,7 +45,8 @@ const items = [
   },
   {
     title: 'US East - Azena',
-    category: 'Gold',
+    category:
+      '🔥【XBOX ONE】✔️ 16 Trillion Pure Cash ✔️ 7900+ Level ✔️ Max S...',
     photo: {
       src: 'https://assetsdelivery.eldorado.gg/v7/_assets_/items/v6/50/Lost-Ark-currency.jpg',
       width: 58,
@@ -54,7 +58,8 @@ const items = [
   },
   {
     title: 'US East - Azena',
-    category: 'Gold',
+    category:
+      '🔥【XBOX ONE】✔️ 16 Trillion Pure Cash ✔️ 7900+ Level ✔️ Max S...',
     photo: {
       src: 'https://assetsdelivery.eldorado.gg/v7/_assets_/items/v6/50/Lost-Ark-currency.jpg',
       width: 58,
@@ -66,7 +71,8 @@ const items = [
   },
   {
     title: 'US East - Azena',
-    category: 'Gold',
+    category:
+      '🔥【XBOX ONE】✔️ 16 Trillion Pure Cash ✔️ 7900+ Level ✔️ Max S...',
     photo: {
       src: 'https://assetsdelivery.eldorado.gg/v7/_assets_/items/v6/50/Lost-Ark-currency.jpg',
       width: 58,
@@ -78,7 +84,8 @@ const items = [
   },
   {
     title: 'US East - Azena',
-    category: 'Gold',
+    category:
+      '🔥【XBOX ONE】✔️ 16 Trillion Pure Cash ✔️ 7900+ Level ✔️ Max S...',
     photo: {
       src: 'https://assetsdelivery.eldorado.gg/v7/_assets_/items/v6/50/Lost-Ark-currency.jpg',
       width: 58,
@@ -90,7 +97,8 @@ const items = [
   },
   {
     title: 'US East - Azena',
-    category: 'Gold',
+    category:
+      '🔥【XBOX ONE】✔️ 16 Trillion Pure Cash ✔️ 7900+ Level ✔️ Max S...',
     photo: {
       src: 'https://assetsdelivery.eldorado.gg/v7/_assets_/items/v6/50/Lost-Ark-currency.jpg',
       width: 58,
@@ -102,7 +110,8 @@ const items = [
   },
   {
     title: 'US East - Azena',
-    category: 'Gold',
+    category:
+      '🔥【XBOX ONE】✔️ 16 Trillion Pure Cash ✔️ 7900+ Level ✔️ Max S...',
     photo: {
       src: 'https://assetsdelivery.eldorado.gg/v7/_assets_/items/v6/50/Lost-Ark-currency.jpg',
       width: 58,
@@ -114,7 +123,8 @@ const items = [
   },
   {
     title: 'US East - Azena',
-    category: 'Gold',
+    category:
+      '🔥【XBOX ONE】✔️ 16 Trillion Pure Cash ✔️ 7900+ Level ✔️ Max S...',
     photo: {
       src: 'https://assetsdelivery.eldorado.gg/v7/_assets_/items/v6/50/Lost-Ark-currency.jpg',
       width: 58,
@@ -126,7 +136,8 @@ const items = [
   },
   {
     title: 'US East - Azena',
-    category: 'Gold',
+    category:
+      '🔥【XBOX ONE】✔️ 16 Trillion Pure Cash ✔️ 7900+ Level ✔️ Max S...',
     photo: {
       src: 'https://assetsdelivery.eldorado.gg/v7/_assets_/items/v6/50/Lost-Ark-currency.jpg',
       width: 58,
@@ -138,7 +149,8 @@ const items = [
   },
   {
     title: 'US East - Azena',
-    category: 'Gold',
+    category:
+      '🔥【XBOX ONE】✔️ 16 Trillion Pure Cash ✔️ 7900+ Level ✔️ Max S...',
     photo: {
       src: 'https://assetsdelivery.eldorado.gg/v7/_assets_/items/v6/50/Lost-Ark-currency.jpg',
       width: 58,
@@ -150,7 +162,8 @@ const items = [
   },
   {
     title: 'US East - Azena',
-    category: 'Gold',
+    category:
+      '🔥【XBOX ONE】✔️ 16 Trillion Pure Cash ✔️ 7900+ Level ✔️ Max S...',
     photo: {
       src: 'https://assetsdelivery.eldorado.gg/v7/_assets_/items/v6/50/Lost-Ark-currency.jpg',
       width: 58,
@@ -168,7 +181,7 @@ const filterOptions = [
       <Menu as='div' className='relative inline-block text-left'>
         <div>
           <Menu.Button className='inline-flex w-[180px] justify-between gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50'>
-            Options
+            Device
             <ChevronDownIcon
               className='-mr-1 h-5 w-5 text-gray-400'
               aria-hidden='true'
@@ -196,7 +209,7 @@ const filterOptions = [
                       'block px-4 py-2 text-sm'
                     )}
                   >
-                    Account settings
+                    PC
                   </a>
                 )}
               </Menu.Item>
@@ -209,7 +222,7 @@ const filterOptions = [
                       'block px-4 py-2 text-sm'
                     )}
                   >
-                    Support
+                    Xbox One
                   </a>
                 )}
               </Menu.Item>
@@ -222,7 +235,7 @@ const filterOptions = [
                       'block px-4 py-2 text-sm'
                     )}
                   >
-                    License
+                    Playstation 4
                   </a>
                 )}
               </Menu.Item>
@@ -236,8 +249,21 @@ const filterOptions = [
                         'block w-full px-4 py-2 text-left text-sm'
                       )}
                     >
-                      Sign out
+                      Playstation 5
                     </button>
+                  )}
+                </Menu.Item>
+                <Menu.Item>
+                  {({ active }) => (
+                    <a
+                      href='#'
+                      className={classNames(
+                        active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                        'block px-4 py-2 text-sm'
+                      )}
+                    >
+                      Xbox Series X/S
+                    </a>
                   )}
                 </Menu.Item>
               </form>
@@ -252,7 +278,7 @@ const filterOptions = [
       <Menu as='div' className='relative inline-block text-left'>
         <div>
           <Menu.Button className='inline-flex w-[180px] justify-between gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50'>
-            Options
+            Price
             <ChevronDownIcon
               className='-mr-1 h-5 w-5 text-gray-400'
               aria-hidden='true'
@@ -271,6 +297,21 @@ const filterOptions = [
         >
           <Menu.Items className='absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none'>
             <div className='py-1'>
+              <div className='flex px-4 py-2'>
+                <input
+                  type='text'
+                  placeholder='From'
+                  className='mr-2 w-1/2 rounded border-gray-300 px-2 py-1 text-sm shadow-sm'
+                />
+                <input
+                  type='text'
+                  placeholder='To'
+                  className='mr-2 w-1/2 rounded border-gray-300 px-2 py-1 text-sm shadow-sm'
+                />
+                <button className='rounded bg-yellow-300 px-4 py-2 text-center text-sm hover:bg-yellow-400'>
+                  <BiSearch />
+                </button>
+              </div>
               <Menu.Item>
                 {({ active }) => (
                   <a
@@ -280,7 +321,7 @@ const filterOptions = [
                       'block px-4 py-2 text-sm'
                     )}
                   >
-                    Account settings
+                    $0 - $50
                   </a>
                 )}
               </Menu.Item>
@@ -293,7 +334,7 @@ const filterOptions = [
                       'block px-4 py-2 text-sm'
                     )}
                   >
-                    Support
+                    $50 - $150
                   </a>
                 )}
               </Menu.Item>
@@ -306,25 +347,235 @@ const filterOptions = [
                       'block px-4 py-2 text-sm'
                     )}
                   >
-                    License
+                    $150 - $300
                   </a>
                 )}
               </Menu.Item>
-              <form method='POST' action='#'>
-                <Menu.Item>
-                  {({ active }) => (
-                    <button
-                      type='submit'
-                      className={classNames(
-                        active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                        'block w-full px-4 py-2 text-left text-sm'
-                      )}
-                    >
-                      Sign out
-                    </button>
-                  )}
-                </Menu.Item>
-              </form>
+              <Menu.Item>
+                {({ active }) => (
+                  <a
+                    href='#'
+                    className={classNames(
+                      active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                      'block px-4 py-2 text-sm'
+                    )}
+                  >
+                    $300+
+                  </a>
+                )}
+              </Menu.Item>
+            </div>
+          </Menu.Items>
+        </Transition>
+      </Menu>
+    ),
+  },
+  {
+    input: (
+      <Menu as='div' className='relative inline-block text-left'>
+        <div>
+          <Menu.Button className='inline-flex w-[200px] justify-between gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50'>
+            Select Delivery Time
+            <ChevronDownIcon
+              className='-mr-1 h-5 w-5 text-gray-400'
+              aria-hidden='true'
+            />
+          </Menu.Button>
+        </div>
+
+        <Transition
+          as={Fragment}
+          enter='transition ease-out duration-100'
+          enterFrom='transform opacity-0 scale-95'
+          enterTo='transform opacity-100 scale-100'
+          leave='transition ease-in duration-75'
+          leaveFrom='transform opacity-100 scale-100'
+          leaveTo='transform opacity-0 scale-95'
+        >
+          <Menu.Items className='absolute right-0 z-10 mt-2 h-[330px] w-56 origin-top-right overflow-auto rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none'>
+            <div className='py-1'>
+              <Menu.Item>
+                {({ active }) => (
+                  <a
+                    href='#'
+                    className={classNames(
+                      active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                      'block px-4 py-2 text-sm'
+                    )}
+                  >
+                    Instant
+                  </a>
+                )}
+              </Menu.Item>
+              <Menu.Item>
+                {({ active }) => (
+                  <a
+                    href='#'
+                    className={classNames(
+                      active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                      'block px-4 py-2 text-sm'
+                    )}
+                  >
+                    5 min
+                  </a>
+                )}
+              </Menu.Item>
+              <Menu.Item>
+                {({ active }) => (
+                  <a
+                    href='#'
+                    className={classNames(
+                      active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                      'block px-4 py-2 text-sm'
+                    )}
+                  >
+                    20 min
+                  </a>
+                )}
+              </Menu.Item>
+              <Menu.Item>
+                {({ active }) => (
+                  <a
+                    href='#'
+                    className={classNames(
+                      active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                      'block px-4 py-2 text-sm'
+                    )}
+                  >
+                    1 h
+                  </a>
+                )}
+              </Menu.Item>
+              <Menu.Item>
+                {({ active }) => (
+                  <a
+                    href='#'
+                    className={classNames(
+                      active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                      'block px-4 py-2 text-sm'
+                    )}
+                  >
+                    5 h
+                  </a>
+                )}
+              </Menu.Item>
+              <Menu.Item>
+                {({ active }) => (
+                  <a
+                    href='#'
+                    className={classNames(
+                      active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                      'block px-4 py-2 text-sm'
+                    )}
+                  >
+                    12 h
+                  </a>
+                )}
+              </Menu.Item>
+              <Menu.Item>
+                {({ active }) => (
+                  <a
+                    href='#'
+                    className={classNames(
+                      active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                      'block px-4 py-2 text-sm'
+                    )}
+                  >
+                    1 day
+                  </a>
+                )}
+              </Menu.Item>
+              <Menu.Item>
+                {({ active }) => (
+                  <a
+                    href='#'
+                    className={classNames(
+                      active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                      'block px-4 py-2 text-sm'
+                    )}
+                  >
+                    2 days
+                  </a>
+                )}
+              </Menu.Item>
+              <Menu.Item>
+                {({ active }) => (
+                  <a
+                    href='#'
+                    className={classNames(
+                      active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                      'block px-4 py-2 text-sm'
+                    )}
+                  >
+                    3 days
+                  </a>
+                )}
+              </Menu.Item>
+              <Menu.Item>
+                {({ active }) => (
+                  <a
+                    href='#'
+                    className={classNames(
+                      active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                      'block px-4 py-2 text-sm'
+                    )}
+                  >
+                    7 days
+                  </a>
+                )}
+              </Menu.Item>
+              <Menu.Item>
+                {({ active }) => (
+                  <a
+                    href='#'
+                    className={classNames(
+                      active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                      'block px-4 py-2 text-sm'
+                    )}
+                  >
+                    14 days
+                  </a>
+                )}
+              </Menu.Item>
+              <Menu.Item>
+                {({ active }) => (
+                  <a
+                    href='#'
+                    className={classNames(
+                      active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                      'block px-4 py-2 text-sm'
+                    )}
+                  >
+                    28 days
+                  </a>
+                )}
+              </Menu.Item>
+              <Menu.Item>
+                {({ active }) => (
+                  <a
+                    href='#'
+                    className={classNames(
+                      active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                      'block px-4 py-2 text-sm'
+                    )}
+                  >
+                    45 days
+                  </a>
+                )}
+              </Menu.Item>
+              <Menu.Item>
+                {({ active }) => (
+                  <a
+                    href='#'
+                    className={classNames(
+                      active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                      'block px-4 py-2 text-sm'
+                    )}
+                  >
+                    60 days
+                  </a>
+                )}
+              </Menu.Item>
             </div>
           </Menu.Items>
         </Transition>
@@ -345,63 +596,71 @@ const Shop = () => {
             alt={games[0].title}
             className=''
           />
-          <h1 className='text-2xl font-semibold'>{games[0].title}</h1>
+          <h1 className='text-2xl font-semibold'>{games[0].title}</h1>{' '}
+          <span className='ml-auto text-sm'>{items.length} listings found</span>
         </div>
-        <div className='my-4 flex flex-col gap-4'>
+        <div className='my-4 flex w-full gap-4'>
+          <form>
+            <div className='relative w-[300px]'>
+              <input
+                type='search'
+                id='default-search'
+                className='block h-[40px] w-full rounded-md border border-gray-300 bg-white p-4 text-sm text-gray-900 focus:border-yellow-500 focus:ring-yellow-500'
+                placeholder='Search Listings'
+                required
+              />
+              <div className='pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3'>
+                <svg
+                  aria-hidden='true'
+                  className='h-5 w-5 text-gray-500 dark:text-gray-400'
+                  fill='none'
+                  stroke='currentColor'
+                  viewBox='0 0 24 24'
+                  xmlns='http://www.w3.org/2000/svg'
+                >
+                  <path
+                    stroke-linecap='round'
+                    stroke-linejoin='round'
+                    stroke-width='2'
+                    d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'
+                  ></path>
+                </svg>
+              </div>
+            </div>
+          </form>
+
           <div className='flex items-center gap-4'>
             {filterOptions.map((option, index) => (
               <div key={index}>{option.input}</div>
             ))}
-            <p className='underline'>Clear filters</p>
-          </div>
-          <div>
-            <form>
-              <div className='relative w-[300px]'>
-                <input
-                  type='search'
-                  id='default-search'
-                  className='block h-[40px] w-full rounded-md border border-gray-300 bg-white p-4 text-sm text-gray-900 focus:border-yellow-500 focus:ring-yellow-500'
-                  placeholder='Search Currency'
-                  required
-                />
-                <div className='pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3'>
-                  <svg
-                    aria-hidden='true'
-                    className='h-5 w-5 text-gray-500 dark:text-gray-400'
-                    fill='none'
-                    stroke='currentColor'
-                    viewBox='0 0 24 24'
-                    xmlns='http://www.w3.org/2000/svg'
-                  >
-                    <path
-                      stroke-linecap='round'
-                      stroke-linejoin='round'
-                      stroke-width='2'
-                      d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'
-                    ></path>
-                  </svg>
-                </div>
-              </div>
-            </form>
+            <p className='text-gray-500'>Clear filters</p>
           </div>
         </div>
         <div>
-          <p>{items.length} items found</p>
-          <div className='grid gap-8 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4'>
+          <div className='grid gap-3 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-3'>
             {items.map((item, index) => (
-              <div key={index} className='w-full border-2 p-2'>
-                <div className='mb-3 w-full border-b-[1px] border-b-slate-200 py-1'>
-                  <p>{item.title}</p>
+              <div
+                key={index}
+                className='group w-full rounded-lg border-0 bg-gray-50 p-4 transition-all hover:bg-gray-100 hover:transition-all'
+              >
+                <div className='mb-3 w-full rounded-md border-b-[0px] border-b-slate-200 bg-gray-300/20 px-1 py-1 transition-all hover:transition-all group-hover:bg-gray-200'>
+                  <p className='font-semibold'>{item.title}</p>
                 </div>
                 <div className='mb-8 flex w-full justify-between'>
                   <p>{item.category}</p>
-                  <Image src={item.photo} alt={item.title} />
+                  <Image
+                    className='rounded-md'
+                    src={item.photo}
+                    alt={item.title}
+                  />
                 </div>
                 <div className='flex w-full items-center justify-between'>
-                  <p>
-                    ${item.price} <span>/{item.unit}</span>
+                  <p className='rounded-md bg-gray-300/20 px-2 py-1 transition-all hover:transition-all group-hover:bg-gray-200'>
+                    <span className='text-sm text-green-600'>$</span>
+                    {item.price}
+                    <span className='text-sm text-gray-400'>/{item.unit}</span>
                   </p>
-                  <p className='flex items-center gap-1'>
+                  <p className='flex items-center gap-1 rounded-md bg-gray-300/20 px-2 py-1 transition-all hover:transition-all group-hover:bg-gray-200'>
                     <BiTimeFive className='text-sm' />
                     {item.garunteedTime} min
                   </p>
