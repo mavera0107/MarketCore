@@ -2,9 +2,16 @@ import { Menu, Transition } from '@headlessui/react';
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid';
 import Image from 'next/image';
-import { Fragment } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import { BiSearch, BiTimeFive } from 'react-icons/bi';
 import { useParams } from 'react-router-dom';
+
+import gameAccountsLists from '../../models/gameAccountsLists';
+import gameAccountsTitles from '../../models/gameAccountsTitles';
+import gameCurrencyLists from '../../models/gameCurrencyLists';
+import gameCurrencyTitles from '../../models/gameCurrencyTitles';
+import gameItemLists from '../../models/gameItemLists';
+import gameItemTitles from '../../models/gameItemTitles';
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
@@ -16,164 +23,20 @@ const games = [
   },
 ];
 
-const items = [
-  {
-    title: 'US East - Azena',
-    category:
-      '🔥【XBOX ONE】✔️ 16 Trillion Pure Cash ✔️ 7900+ Level ✔️ Max S...',
-    photo: {
-      src: 'https://assetsdelivery.eldorado.gg/v7/_assets_/items/v6/50/Lost-Ark-currency.jpg',
-      width: 58,
-      height: 58,
-    },
-    price: '0.444',
-    unit: 'k',
-    garunteedTime: '20',
-  },
-  {
-    title: 'US East - Azena',
-    category:
-      '🔥【XBOX ONE】✔️ 16 Trillion Pure Cash ✔️ 7900+ Level ✔️ Max S...',
-    photo: {
-      src: 'https://assetsdelivery.eldorado.gg/v7/_assets_/items/v6/50/Lost-Ark-currency.jpg',
-      width: 58,
-      height: 58,
-    },
-    price: '0.444',
-    unit: 'k',
-    garunteedTime: '20',
-  },
-  {
-    title: 'US East - Azena',
-    category:
-      '🔥【XBOX ONE】✔️ 16 Trillion Pure Cash ✔️ 7900+ Level ✔️ Max S...',
-    photo: {
-      src: 'https://assetsdelivery.eldorado.gg/v7/_assets_/items/v6/50/Lost-Ark-currency.jpg',
-      width: 58,
-      height: 58,
-    },
-    price: '0.444',
-    unit: 'k',
-    garunteedTime: '20',
-  },
-  {
-    title: 'US East - Azena',
-    category:
-      '🔥【XBOX ONE】✔️ 16 Trillion Pure Cash ✔️ 7900+ Level ✔️ Max S...',
-    photo: {
-      src: 'https://assetsdelivery.eldorado.gg/v7/_assets_/items/v6/50/Lost-Ark-currency.jpg',
-      width: 58,
-      height: 58,
-    },
-    price: '0.444',
-    unit: 'k',
-    garunteedTime: '20',
-  },
-  {
-    title: 'US East - Azena',
-    category:
-      '🔥【XBOX ONE】✔️ 16 Trillion Pure Cash ✔️ 7900+ Level ✔️ Max S...',
-    photo: {
-      src: 'https://assetsdelivery.eldorado.gg/v7/_assets_/items/v6/50/Lost-Ark-currency.jpg',
-      width: 58,
-      height: 58,
-    },
-    price: '0.444',
-    unit: 'k',
-    garunteedTime: '20',
-  },
-  {
-    title: 'US East - Azena',
-    category:
-      '🔥【XBOX ONE】✔️ 16 Trillion Pure Cash ✔️ 7900+ Level ✔️ Max S...',
-    photo: {
-      src: 'https://assetsdelivery.eldorado.gg/v7/_assets_/items/v6/50/Lost-Ark-currency.jpg',
-      width: 58,
-      height: 58,
-    },
-    price: '0.444',
-    unit: 'k',
-    garunteedTime: '20',
-  },
-  {
-    title: 'US East - Azena',
-    category:
-      '🔥【XBOX ONE】✔️ 16 Trillion Pure Cash ✔️ 7900+ Level ✔️ Max S...',
-    photo: {
-      src: 'https://assetsdelivery.eldorado.gg/v7/_assets_/items/v6/50/Lost-Ark-currency.jpg',
-      width: 58,
-      height: 58,
-    },
-    price: '0.444',
-    unit: 'k',
-    garunteedTime: '20',
-  },
-  {
-    title: 'US East - Azena',
-    category:
-      '🔥【XBOX ONE】✔️ 16 Trillion Pure Cash ✔️ 7900+ Level ✔️ Max S...',
-    photo: {
-      src: 'https://assetsdelivery.eldorado.gg/v7/_assets_/items/v6/50/Lost-Ark-currency.jpg',
-      width: 58,
-      height: 58,
-    },
-    price: '0.444',
-    unit: 'k',
-    garunteedTime: '20',
-  },
-  {
-    title: 'US East - Azena',
-    category:
-      '🔥【XBOX ONE】✔️ 16 Trillion Pure Cash ✔️ 7900+ Level ✔️ Max S...',
-    photo: {
-      src: 'https://assetsdelivery.eldorado.gg/v7/_assets_/items/v6/50/Lost-Ark-currency.jpg',
-      width: 58,
-      height: 58,
-    },
-    price: '0.444',
-    unit: 'k',
-    garunteedTime: '20',
-  },
-  {
-    title: 'US East - Azena',
-    category:
-      '🔥【XBOX ONE】✔️ 16 Trillion Pure Cash ✔️ 7900+ Level ✔️ Max S...',
-    photo: {
-      src: 'https://assetsdelivery.eldorado.gg/v7/_assets_/items/v6/50/Lost-Ark-currency.jpg',
-      width: 58,
-      height: 58,
-    },
-    price: '0.444',
-    unit: 'k',
-    garunteedTime: '20',
-  },
-  {
-    title: 'US East - Azena',
-    category:
-      '🔥【XBOX ONE】✔️ 16 Trillion Pure Cash ✔️ 7900+ Level ✔️ Max S...',
-    photo: {
-      src: 'https://assetsdelivery.eldorado.gg/v7/_assets_/items/v6/50/Lost-Ark-currency.jpg',
-      width: 58,
-      height: 58,
-    },
-    price: '0.444',
-    unit: 'k',
-    garunteedTime: '20',
-  },
-  {
-    title: 'US East - Azena',
-    category:
-      '🔥【XBOX ONE】✔️ 16 Trillion Pure Cash ✔️ 7900+ Level ✔️ Max S...',
-    photo: {
-      src: 'https://assetsdelivery.eldorado.gg/v7/_assets_/items/v6/50/Lost-Ark-currency.jpg',
-      width: 58,
-      height: 58,
-    },
-    price: '0.444',
-    unit: 'k',
-    garunteedTime: '20',
-  },
-];
+const { gameId } = useParams();
+
+type Item = {
+  title: string;
+  category: string;
+  photo: {
+    src: string;
+    width: number;
+    height: number;
+  };
+  price: string;
+  unit: string;
+  guaranteedTime: string;
+};
 
 const filterOptions = [
   {
@@ -585,6 +448,182 @@ const filterOptions = [
 ];
 
 const Shop = () => {
+  const [game, setGame] = useState(null);
+  const [items, setItems] = useState<Item[]>([
+    {
+      title: 'US East - Azena',
+      category:
+        '🔥【XBOX ONE】✔️ 16 Trillion Pure Cash ✔️ 7900+ Level ✔️ Max S...',
+      photo: {
+        src: 'https://assetsdelivery.eldorado.gg/v7/_assets_/items/v6/50/Lost-Ark-currency.jpg',
+        width: 58,
+        height: 58,
+      },
+      price: '0.444',
+      unit: 'k',
+      guaranteedTime: '20',
+    },
+    {
+      title: 'US East - Azena',
+      category:
+        '🔥【XBOX ONE】✔️ 16 Trillion Pure Cash ✔️ 7900+ Level ✔️ Max S...',
+      photo: {
+        src: 'https://assetsdelivery.eldorado.gg/v7/_assets_/items/v6/50/Lost-Ark-currency.jpg',
+        width: 58,
+        height: 58,
+      },
+      price: '0.444',
+      unit: 'k',
+      guaranteedTime: '20',
+    },
+    {
+      title: 'US East - Azena',
+      category:
+        '🔥【XBOX ONE】✔️ 16 Trillion Pure Cash ✔️ 7900+ Level ✔️ Max S...',
+      photo: {
+        src: 'https://assetsdelivery.eldorado.gg/v7/_assets_/items/v6/50/Lost-Ark-currency.jpg',
+        width: 58,
+        height: 58,
+      },
+      price: '0.444',
+      unit: 'k',
+      guaranteedTime: '20',
+    },
+    {
+      title: 'US East - Azena',
+      category:
+        '🔥【XBOX ONE】✔️ 16 Trillion Pure Cash ✔️ 7900+ Level ✔️ Max S...',
+      photo: {
+        src: 'https://assetsdelivery.eldorado.gg/v7/_assets_/items/v6/50/Lost-Ark-currency.jpg',
+        width: 58,
+        height: 58,
+      },
+      price: '0.444',
+      unit: 'k',
+      guaranteedTime: '20',
+    },
+    {
+      title: 'US East - Azena',
+      category:
+        '🔥【XBOX ONE】✔️ 16 Trillion Pure Cash ✔️ 7900+ Level ✔️ Max S...',
+      photo: {
+        src: 'https://assetsdelivery.eldorado.gg/v7/_assets_/items/v6/50/Lost-Ark-currency.jpg',
+        width: 58,
+        height: 58,
+      },
+      price: '0.444',
+      unit: 'k',
+      guaranteedTime: '20',
+    },
+    {
+      title: 'US East - Azena',
+      category:
+        '🔥【XBOX ONE】✔️ 16 Trillion Pure Cash ✔️ 7900+ Level ✔️ Max S...',
+      photo: {
+        src: 'https://assetsdelivery.eldorado.gg/v7/_assets_/items/v6/50/Lost-Ark-currency.jpg',
+        width: 58,
+        height: 58,
+      },
+      price: '0.444',
+      unit: 'k',
+      guaranteedTime: '20',
+    },
+    {
+      title: 'US East - Azena',
+      category:
+        '🔥【XBOX ONE】✔️ 16 Trillion Pure Cash ✔️ 7900+ Level ✔️ Max S...',
+      photo: {
+        src: 'https://assetsdelivery.eldorado.gg/v7/_assets_/items/v6/50/Lost-Ark-currency.jpg',
+        width: 58,
+        height: 58,
+      },
+      price: '0.444',
+      unit: 'k',
+      guaranteedTime: '20',
+    },
+    {
+      title: 'US East - Azena',
+      category:
+        '🔥【XBOX ONE】✔️ 16 Trillion Pure Cash ✔️ 7900+ Level ✔️ Max S...',
+      photo: {
+        src: 'https://assetsdelivery.eldorado.gg/v7/_assets_/items/v6/50/Lost-Ark-currency.jpg',
+        width: 58,
+        height: 58,
+      },
+      price: '0.444',
+      unit: 'k',
+      guaranteedTime: '20',
+    },
+    {
+      title: 'US East - Azena',
+      category:
+        '🔥【XBOX ONE】✔️ 16 Trillion Pure Cash ✔️ 7900+ Level ✔️ Max S...',
+      photo: {
+        src: 'https://assetsdelivery.eldorado.gg/v7/_assets_/items/v6/50/Lost-Ark-currency.jpg',
+        width: 58,
+        height: 58,
+      },
+      price: '0.444',
+      unit: 'k',
+      guaranteedTime: '20',
+    },
+    {
+      title: 'US East - Azena',
+      category:
+        '🔥【XBOX ONE】✔️ 16 Trillion Pure Cash ✔️ 7900+ Level ✔️ Max S...',
+      photo: {
+        src: 'https://assetsdelivery.eldorado.gg/v7/_assets_/items/v6/50/Lost-Ark-currency.jpg',
+        width: 58,
+        height: 58,
+      },
+      price: '0.444',
+      unit: 'k',
+      guaranteedTime: '20',
+    },
+    {
+      title: 'US East - Azena',
+      category:
+        '🔥【XBOX ONE】✔️ 16 Trillion Pure Cash ✔️ 7900+ Level ✔️ Max S...',
+      photo: {
+        src: 'https://assetsdelivery.eldorado.gg/v7/_assets_/items/v6/50/Lost-Ark-currency.jpg',
+        width: 58,
+        height: 58,
+      },
+      price: '0.444',
+      unit: 'k',
+      guaranteedTime: '20',
+    },
+    {
+      title: 'US East - Azena',
+      category:
+        '🔥【XBOX ONE】✔️ 16 Trillion Pure Cash ✔️ 7900+ Level ✔️ Max S...',
+      photo: {
+        src: 'https://assetsdelivery.eldorado.gg/v7/_assets_/items/v6/50/Lost-Ark-currency.jpg',
+        width: 58,
+        height: 58,
+      },
+      price: '0.444',
+      unit: 'k',
+      guaranteedTime: '20',
+    },
+  ]);
+
+  useEffect(() => {
+    // Fetch game details
+    fetch(`../../gameAccountsLists/${gameId}.ts`)
+      .then((res) => res.json())
+      .then((data) => setGame(data));
+
+    // Fetch items for this game
+    fetch(`../../gameItemLists/${gameId}.ts`)
+      .then((res) => res.json())
+      .then((data) => setItems(data));
+
+    // Similarly, fetch other required data...
+  }, [gameId]);
+
+  if (!game || items.length === 0) return <div>Loading...</div>;
+
   return (
     <div className='mt-24 flex justify-center'>
       <div className='mx-20 h-[100px] w-full max-w-7xl'>
@@ -662,7 +701,7 @@ const Shop = () => {
                   </p>
                   <p className='flex items-center gap-1 rounded-md bg-gray-300/20 px-2 py-1 transition-all hover:transition-all group-hover:bg-gray-200'>
                     <BiTimeFive className='text-sm' />
-                    {item.garunteedTime} min
+                    {item.guaranteedTime} min
                   </p>
                 </div>
               </div>
@@ -756,7 +795,7 @@ const Shop = () => {
             </div>
           </div>
         </div>
-        <div className='flex flex-col gap-3 py-20 lg:p-10'>
+        {/* <div className='flex flex-col gap-3 py-20 lg:p-10'>
           <h2>Lost Ark Gold</h2>
           <p>
             Lost Ark Gold is the main currency of the MMOARPG video game Lost
@@ -827,7 +866,7 @@ const Shop = () => {
             That is it! Now you have your Lost Ark Gold and you can continue
             playing the game the way you like.
           </p>
-        </div>
+        </div> */}
       </div>
     </div>
   );
