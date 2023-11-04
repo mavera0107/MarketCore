@@ -323,18 +323,25 @@ export default function Navbar() {
                             key={index}
                             className='group flex items-center justify-between bg-gray-50 px-4 py-2 transition-all hover:cursor-pointer hover:bg-white hover:text-black'
                           >
-                            <div className='flex items-center'>
-                              {game.icon && (
-                                <img
-                                  src={game.icon}
-                                  alt='Game Icon'
-                                  className='mr-2 h-6 w-6 rounded transition-all group-hover:scale-105'
-                                />
-                              )}
-                              <span className='text-gray-500 hover:text-gray-800'>
-                                {game.title}
-                              </span>
-                            </div>
+                            <Link href={`/shop/${game.gameId}`}>
+                              <div
+                                key={index}
+                                className='group flex items-center justify-between bg-gray-50 px-4 py-2 transition-all hover:cursor-pointer hover:bg-white hover:text-black'
+                              >
+                                <div className='flex items-center'>
+                                  {game.icon && (
+                                    <img
+                                      src={game.icon}
+                                      alt='Game Icon'
+                                      className='mr-2 h-6 w-6 rounded transition-all group-hover:scale-105'
+                                    />
+                                  )}
+                                  <span className='text-gray-500 hover:text-gray-800'>
+                                    {game.title}
+                                  </span>
+                                </div>
+                              </div>
+                            </Link>
                           </div>
                         ))}
                       </div>
@@ -435,23 +442,25 @@ export default function Navbar() {
                             .toLowerCase()
                             .includes(searchQuery.toLowerCase())
                         ).map((game, index) => (
-                          <div
-                            key={index}
-                            className='group flex items-center justify-between bg-gray-50 px-4 py-2 transition-all hover:cursor-pointer hover:bg-white hover:text-black'
-                          >
-                            <div className='flex items-center'>
-                              {game.icon && (
-                                <img
-                                  src={game.icon}
-                                  alt='Game Icon'
-                                  className='mr-2 h-6 w-6 rounded transition-all group-hover:scale-105'
-                                />
-                              )}
-                              <span className='text-gray-500 hover:text-gray-800'>
-                                {game.title}
-                              </span>
+                          <Link href={`/shop/${game.gameId}`}>
+                            <div
+                              key={index}
+                              className='group flex items-center justify-between bg-gray-50 px-4 py-2 transition-all hover:cursor-pointer hover:bg-white hover:text-black'
+                            >
+                              <div className='flex items-center'>
+                                {game.icon && (
+                                  <img
+                                    src={game.icon}
+                                    alt='Game Icon'
+                                    className='mr-2 h-6 w-6 rounded transition-all group-hover:scale-105'
+                                  />
+                                )}
+                                <span className='text-gray-500 hover:text-gray-800'>
+                                  {game.title}
+                                </span>
+                              </div>
                             </div>
-                          </div>
+                          </Link>
                         ))}
                       </div>
                     </div>
@@ -555,18 +564,20 @@ export default function Navbar() {
                             key={index}
                             className='group flex items-center justify-between bg-gray-50 px-4 py-2 transition-all hover:cursor-pointer hover:bg-white hover:text-black'
                           >
-                            <div className='flex items-center'>
-                              {game.icon && (
-                                <img
-                                  src={game.icon}
-                                  alt='Game Icon'
-                                  className='mr-2 h-6 w-6 rounded transition-all group-hover:scale-105'
-                                />
-                              )}
-                              <span className='text-gray-500 hover:text-gray-800'>
-                                {game.title}
-                              </span>
-                            </div>
+                            <Link href={`/shop/${game.gameId}`}>
+                              <div className='flex items-center'>
+                                {game.icon && (
+                                  <img
+                                    src={game.icon}
+                                    alt='Game Icon'
+                                    className='mr-2 h-6 w-6 rounded transition-all group-hover:scale-105'
+                                  />
+                                )}
+                                <span className='text-gray-500 hover:text-gray-800'>
+                                  {game.title}
+                                </span>
+                              </div>
+                            </Link>
                           </div>
                         ))}
                       </div>
